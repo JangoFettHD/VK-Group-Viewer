@@ -6,8 +6,8 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/imageView2"
-        android:src="#e0bdbd"
+        android:id="@+id/anImage"
+        android:src="@drawable/levels"
         android:layout_weight="1" />
 
     <LinearLayout
@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:gravity="left|center_vertical"
         android:layout_weight="1000"
-        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/anImage"
         android:layout_marginLeft="7dp"
         android:layout_marginRight="150dp">
 
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Luchi/Golos"
-            android:id="@+id/textView2"
+            android:id="@+id/anText"
             android:layout_gravity="center_horizontal"
             android:textSize="15dp" />
 
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Thomas Mraz"
-            android:id="@+id/textView3"
+            android:id="@+id/anAutor"
             android:layout_gravity="center_horizontal"
             android:textSize="12dp" />
     </LinearLayout>
@@ -47,7 +47,7 @@
         android:layout_alignParentEnd="true">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/anPlay"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"

@@ -11,8 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="2dp"
-        android:paddingTop="2dp"
         android:weightSum="1">
 
         <TextView
@@ -20,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textColor="#282828" />
 
         <HorizontalScrollView
             android:id="@+id/photos"
@@ -65,11 +64,13 @@
                 android:layout_height="match_parent"
                 android:text="New Text"
                 android:id="@+id/time"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:paddingLeft="15dp"
                 android:layout_weight="1"
                 android:textSize="15dp"
-                android:textColor="#000000" />
+                android:textColor="#282828"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
             <ImageButton
                 android:id="@+id/repost"
@@ -78,11 +79,12 @@
                 android:layout_weight="1"
                 android:background="#00ffffff"
                 android:padding="12dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/next"
+                android:scaleType="centerCrop"
+                android:src="@drawable/superrepost"
                 android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@+id/like"
-                android:layout_toStartOf="@+id/like" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="9dp" />
 
             <ImageButton
                 android:id="@+id/like"
@@ -91,8 +93,8 @@
                 android:layout_weight="1"
                 android:background="#00ffffff"
                 android:padding="12dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/like"
+                android:scaleType="centerCrop"
+                android:src="@drawable/superlike"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
