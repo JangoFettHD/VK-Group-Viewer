@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Lentach</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <integer name="com_vk_sdk_AppId">5610738</integer>
+
+    <string name="action_settings">Settings</string>
+
+    <integer-array name="groups">
+        <item>-127337515</item>
+        <item>-66290244</item>
+        <item>-102669115</item>
+        <item>-125004421</item>
+        <item>-29534144</item>
+    </integer-array>
+</resources>
