@@ -1,17 +1,16 @@
 package me.jangofetthd.lentach;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -43,7 +42,6 @@ public class NewsFeedRecyclerViewAdapter extends RecyclerView.Adapter<NewsFeedRe
     public NewsFeedRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_item, parent, false);
         return new ViewHolder(v);
-
     }
 
     @Override
@@ -100,10 +98,14 @@ public class NewsFeedRecyclerViewAdapter extends RecyclerView.Adapter<NewsFeedRe
             }
         }
         if (audios.isEmpty()) {
-            holder.pAudiosList.setVisibility(View.GONE);
+            holder.pAudiosRecyclerView.setVisibility(View.GONE);
         } else {
-            holder.pAudiosList.setVisibility(View.VISIBLE);
-            holder.pAudiosList.setAdapter();
+            holder.pAudiosRecyclerView.setVisibility(View.VISIBLE);
+            LinearLayoutManager manager = new LinearLayoutManager(context);
+            holder.pAudiosRecyclerView.setLayoutManager(manager);
+
+            AudioRecyclerViewAdapter adapter = new AudioRecyclerViewAdapter(audios, context);
+            holder.pAudiosRecyclerView.setAdapter(adapter);
         }
         if (documents.isEmpty()) {
             holder.pGifsScroll.setVisibility(View.GONE);
@@ -123,7 +125,7 @@ public class NewsFeedRecyclerViewAdapter extends RecyclerView.Adapter<NewsFeedRe
         private TextView pTime;
         private HorizontalScrollView pImagesScroll;
         private HorizontalScrollView pGifsScroll;
-        private ListView pAudiosList;
+        private RecyclerView pAudiosRecyclerView;
         private ImageButton pLike;
         private ImageButton pRepost;
         private LinearLayout llPhotos;
@@ -135,7 +137,7 @@ public class NewsFeedRecyclerViewAdapter extends RecyclerView.Adapter<NewsFeedRe
             pTime = (TextView) itemView.findViewById(R.id.time);
             pImagesScroll = (HorizontalScrollView) itemView.findViewById(R.id.photos);
             pGifsScroll = (HorizontalScrollView) itemView.findViewById(R.id.gifs);
-            pAudiosList = (ListView) itemView.findViewById(R.id.audios);
+            pAudiosRecyclerView = (RecyclerView) itemView.findViewById(R.id.audios);
             pLike = (ImageButton) itemView.findViewById(R.id.like);
             pRepost = (ImageButton) itemView.findViewById(R.id.repost);
             llPhotos = (LinearLayout) itemView.findViewById(R.id.llphotos);
@@ -144,38 +146,4 @@ public class NewsFeedRecyclerViewAdapter extends RecyclerView.Adapter<NewsFeedRe
         }
     }
 
-    class VkAudioAdapter extends BaseAdapter {
-
-        List<VKApiAudio> audios;
-
-        VkAudioAdapter(List<VKApiAudio> audios) {
-            this.audios = audios;
-        }
-
-        @Override
-        public int getCount() {
-            return audios.size();
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return i;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            View returnView;
-            if (view == null)
-                returnView = ((LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.player, viewGroup);
-
-            
-
-            return null;
-        }
-    }
 }

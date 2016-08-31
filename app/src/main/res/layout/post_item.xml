@@ -49,12 +49,12 @@
                 android:id="@+id/llgifs"></LinearLayout>
         </HorizontalScrollView>
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/audios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <RelativeLayout
             android:layout_width="match_parent"
