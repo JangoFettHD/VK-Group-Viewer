@@ -6,16 +6,21 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:weightSum="1">
 
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/apImage"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/artworks_000179307911_7i2ens_t500x500"
-            android:scaleType="centerCrop" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/apImage"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/artworks_000179307911_7i2ens_t500x500"
+                android:scaleType="centerCrop" />
+        </FrameLayout>
 
         <SeekBar
             android:layout_width="match_parent"
@@ -31,7 +36,8 @@
             android:text="Xero"
             android:id="@+id/apArtist"
             android:layout_gravity="center_horizontal"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,10 +47,11 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:singleLine="false"
-            android:layout_weight="0.62"
             android:maxLines="2"
             android:nestedScrollingEnabled="true"
-            android:layout_margin="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -52,11 +59,23 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:id="@+id/apAdd"
+                android:layout_weight="1"
+                android:src="@drawable/add"
+                android:background="#00ffffff"
+                android:scaleType="fitCenter" />
 
             <ImageButton
                 android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:id="@+id/apPrev"
                 android:layout_weight="1"
                 android:src="@drawable/rewind"
@@ -65,7 +84,7 @@
 
             <ImageButton
                 android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:id="@+id/apPlay"
                 android:layout_weight="1"
                 android:src="@drawable/play_button"
@@ -74,10 +93,19 @@
 
             <ImageButton
                 android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:id="@+id/apNext"
                 android:layout_weight="1"
                 android:src="@drawable/rewind_b"
+                android:background="#00ffffff"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:id="@+id/apRepeat"
+                android:layout_weight="1"
+                android:src="@drawable/repeat"
                 android:background="#00ffffff"
                 android:scaleType="fitCenter" />
 
